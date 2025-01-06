@@ -1,11 +1,11 @@
-import { HeroSection } from '@/components/sections/hero';
-import { Benefits } from '@/components/sections/benefits';
+import { ProgressIndicator } from '@/components/progress-indicator';
 import { RegisterForm } from '@/components/sections/register-form';
-import { AboutUs } from '@/components/sections/about';
 import { Services } from '@/components/sections/services';
 import { Coverage } from '@/components/sections/coverage';
+import { Benefits } from '@/components/sections/benefits';
+import { HeroSection } from '@/components/sections/hero';
+import { AboutUs } from '@/components/sections/about';
 import { FAQ } from '@/components/sections/faq';
-import { ProgressIndicator } from '@/components/progress-indicator';
 
 export default function Home() {
   return (
@@ -21,3 +21,4 @@ export default function Home() {
     </main>
   );
 }
+

@@ -1,11 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { motion } from 'framer-motion';
 
 const faqs = [
   {
@@ -31,19 +33,51 @@ const faqs = [
 ];
 
 export function FAQ() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   return (
     <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-        <Accordion type="single" collapsible className="w-full">
+        <motion.h2 
+          className="text-3xl font-bold text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Frequently Asked Questions
+        </motion.h2>
+        <Accordion 
+          type="single" 
+          collapsible 
+          className="w-full"
+          onValueChange={(value) => setExpandedIndex(value ? parseInt(value.split('-')[1]) : null)}
+        >
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
-            </AccordionItem>
+            <motion.div
+              key={`faq-${index}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <AccordionItem value={`item-${index}`}>
+                <AccordionTrigger>
+                  <span className="text-left">{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {faq.answer}
+                  </motion.div>
+                </AccordionContent>
+              </AccordionItem>
+            </motion.div>
           ))}
         </Accordion>
       </div>
     </section>
   );
 }
+

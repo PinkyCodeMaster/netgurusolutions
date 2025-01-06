@@ -1,4 +1,5 @@
 import { Toaster } from '@/components/ui/toaster';
+import NavBar from '@/components/layout/nav-bar';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
@@ -16,9 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {children}
+    <html lang="en" className={inter.className}>
+      <body className="min-h-screen bg-background font-sans antialiased">
+        <div className="relative flex min-h-screen flex-col">
+          <NavBar />
+          <main className="flex-1">{children}</main>
+        </div>
         <Toaster />
       </body>
     </html>
