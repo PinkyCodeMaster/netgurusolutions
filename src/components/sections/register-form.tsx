@@ -28,7 +28,7 @@ export function RegisterForm() {
     }
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit() {
     setIsLoading(true);
     try {
       // Simulate API call
@@ -44,6 +44,7 @@ export function RegisterForm() {
         description: "Please try again later.",
         variant: "destructive",
       });
+      console.log(error)
     } finally {
       setIsLoading(false);
     }

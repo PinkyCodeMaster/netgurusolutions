@@ -21,7 +21,7 @@ export function HeroSection() {
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Experience lightning-fast fiber internet with our upcoming service. 
-            We're building the next generation of connectivity using open fiber networks.
+            We&apos;re building the next generation of connectivity using open fiber networks.
           </p>
           <Button size="lg" className="mr-4">Register Interest</Button>
           <Button size="lg" variant="outline">Learn More</Button>
