@@ -10,13 +10,66 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-const plans = [
-  { name: "FAST", download: "80 Mbps", upload: "20 Mbps", price: 33, staticIpPrice: 35 },
-  { name: "SUPER FAST", download: "160 Mbps", upload: "30 Mbps", price: 39, staticIpPrice: 41 },
-  { name: "ULTRA FAST", download: "360 Mbps", upload: "72 Mbps", price: 56, staticIpPrice: 58 },
-  { name: "MEGA FAST", download: "900 Mbps", upload: "180 Mbps", price: 67, staticIpPrice: 69 },
-]
-
+// Define a Plan type
+type Plan = {
+    name: string;
+    download: string;
+    upload: string;
+    price: number;
+    staticIpPrice: number;
+  };
+  
+  const plans: Plan[] = [
+    { name: "FAST", download: "80 Mbps", upload: "20 Mbps", price: 33, staticIpPrice: 35 },
+    { name: "SUPER FAST", download: "160 Mbps", upload: "30 Mbps", price: 39, staticIpPrice: 41 },
+    { name: "ULTRA FAST", download: "360 Mbps", upload: "72 Mbps", price: 56, staticIpPrice: 58 },
+    { name: "MEGA FAST", download: "900 Mbps", upload: "180 Mbps", price: 67, staticIpPrice: 69 },
+  ];
+  
+  // Function to render the table
+  function PlanTable({ plans, isStaticIp }: { plans: Plan[], isStaticIp: boolean }) {
+    return (
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Plan</TableHead>
+            <TableHead>Download</TableHead>
+            <TableHead>Upload</TableHead>
+            <TableHead>Price/Month</TableHead>
+            <TableHead></TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {plans.map((plan) => (
+            <TableRow key={plan.name}>
+              <TableCell className="font-medium">{plan.name}</TableCell>
+              <TableCell>{plan.download}</TableCell>
+              <TableCell>{plan.upload}</TableCell>
+              <TableCell>
+                £{isStaticIp ? plan.staticIpPrice : plan.price}.00
+                {isStaticIp && (
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Info className="h-4 w-4 ml-1 inline-block text-muted-foreground" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Includes £2/month for Static IP</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                )}
+              </TableCell>
+              <TableCell>
+                <Button>Choose Plan</Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    );
+  }
+  
 export default function FibreInternet() {
   return (
     <section className="py-24 bg-muted/50">
@@ -61,49 +114,6 @@ export default function FibreInternet() {
         </div>
       </div>
     </section>
-  )
-}
-
-function PlanTable({ plans, isStaticIp }: { plans: any[], isStaticIp: boolean }) {
-  return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Plan</TableHead>
-          <TableHead>Download</TableHead>
-          <TableHead>Upload</TableHead>
-          <TableHead>Price/Month</TableHead>
-          <TableHead></TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {plans.map((plan) => (
-          <TableRow key={plan.name}>
-            <TableCell className="font-medium">{plan.name}</TableCell>
-            <TableCell>{plan.download}</TableCell>
-            <TableCell>{plan.upload}</TableCell>
-            <TableCell>
-              £{isStaticIp ? plan.staticIpPrice : plan.price}.00
-              {isStaticIp && (
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <Info className="h-4 w-4 ml-1 inline-block text-muted-foreground" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Includes £2/month for Static IP</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              )}
-            </TableCell>
-            <TableCell>
-              <Button>Choose Plan</Button>
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
   )
 }
 

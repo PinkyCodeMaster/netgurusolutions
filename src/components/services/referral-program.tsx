@@ -12,7 +12,7 @@ export default function ReferralProgram() {
                         <h3 className="text-2xl font-semibold mb-4">Earn Rewards by Sharing the Love</h3>
                         <p className="mb-6">
                             Our referral program lets you earn rewards for every friend or family member you bring to NetGuru Fiber.
-                            It's our way of saying thank you for helping us grow our community.
+                            It&apos;s our way of saying thank you for helping us grow our community.
                         </p>
                         <div className="space-y-4 mb-6">
                             <div className="flex items-start">
@@ -21,7 +21,7 @@ export default function ReferralProgram() {
                             </div>
                             <div className="flex items-start">
                                 <Users className="h-6 w-6 mr-2 text-primary flex-shrink-0" />
-                                <p>Your referred friend gets £25 off their first month's bill</p>
+                                <p>Your referred friend gets £25 off their first month&apos;s bill</p>
                             </div>
                             <div className="flex items-start">
                                 <Zap className="h-6 w-6 mr-2 text-primary flex-shrink-0" />
@@ -43,7 +43,7 @@ export default function ReferralProgram() {
                                 <li>When they sign up using your code, you both get rewarded</li>
                             </ol>
                             <p className="mt-4 text-sm text-muted-foreground">
-                                Terms and conditions apply. Rewards are credited after the referred customer's service has been active for 30 days.
+                                Terms and conditions apply. Rewards are credited after the referred customer&apos;s service has been active for 30 days.
                             </p>
                         </CardContent>
                     </Card>

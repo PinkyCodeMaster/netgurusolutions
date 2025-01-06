@@ -13,10 +13,10 @@ export default function Introduction() {
           <Card>
             <CardContent className="pt-6">
               <p className="text-lg mb-4">
-                NetGuru Fiber is a forward-thinking internet service provider founded by a former virgin media engineer with additional expertise in software engineering and IT support. We're dedicated to bridging the digital divide by bringing big tech knowledge to local, independent networks.
+                NetGuru Fiber is a forward-thinking internet service provider founded by a former virgin media engineer with additional expertise in software engineering and IT support. We&apos;re dedicated to bridging the digital divide by bringing big tech knowledge to local, independent networks.
               </p>
               <p className="text-lg">
-                With over 10 years of combined experience in the tech industry, we've crafted a unique approach that combines the reliability and innovation of leading tech companies with the personalized care and community focus of a local provider.
+                With over 10 years of combined experience in the tech industry, we&apos;ve crafted a unique approach that combines the reliability and innovation of leading tech companies with the personalized care and community focus of a local provider.
               </p>
             </CardContent>
           </Card>

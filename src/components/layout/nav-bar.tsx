@@ -33,7 +33,7 @@ const NavBar = () => {
     })
 
     return () => subscription.unsubscribe()
-  }, [])
+  }, )
 
   const handleLogout = async () => {
     await supabase.auth.signOut()

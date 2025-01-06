@@ -71,7 +71,7 @@ export function Coverage() {
           </Card>
 
           <p className="mt-8 text-sm text-muted-foreground">
-            Not covered yet? Register your interest above and we'll notify you when 
+            Not covered yet? Register your interest above and we&apos;ll notify you when 
             services become available in your area.
           </p>
         </motion.div>

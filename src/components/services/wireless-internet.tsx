@@ -22,11 +22,11 @@ export default function WirelessInternet() {
         <h2 className="text-3xl font-bold text-center mb-12">Wireless Internet Solutions - Coming Soon!</h2>
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle>We're Expanding Our Network</CardTitle>
+            <CardTitle>We&apos;re Expanding Our Network</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="mb-6">
-              We're currently planning our wireless network expansion and sourcing the right equipment. Our goal is to bring high-speed internet to areas that need it most. If you feel your work area would benefit from our wireless internet service, please let us know by submitting the form below.
+              We&apos;re currently planning our wireless network expansion and sourcing the right equipment. Our goal is to bring high-speed internet to areas that need it most. If you feel your work area would benefit from our wireless internet service, please let us know by submitting the form below.
             </p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input 

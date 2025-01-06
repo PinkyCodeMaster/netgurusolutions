@@ -38,7 +38,7 @@ export function AboutUs() {
         >
           <h2 className="text-3xl font-bold mb-6">Building the Future of Connectivity</h2>
           <p className="text-lg text-muted-foreground">
-            We're a team of network infrastructure experts committed to bringing 
+            We&apos;re a team of network infrastructure experts committed to bringing 
             next-generation internet connectivity to communities through open fiber networks.
           </p>
         </motion.div>
