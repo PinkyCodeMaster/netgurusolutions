@@ -1,10 +1,11 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Athena Docs",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
+  "theme": "prism",
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#0D9373",
@@ -18,12 +19,12 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:support@mintlify.com"
+      "url": "mailto:support@netgurusolutions.co.uk"
     }
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://dashboard.netgurusolutions.co.uk"
   },
   "tabs": [
     {
@@ -56,7 +57,7 @@
     {
       "group": "Essentials",
       "pages": [
-        "essentials/markdown",
+        "essentials/getting-started",
         "essentials/code",
         "essentials/images",
         "essentials/settings",
